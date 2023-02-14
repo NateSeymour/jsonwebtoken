@@ -42,6 +42,59 @@ pub enum Algorithm {
 
     /// Edwards-curve Digital Signature Algorithm (EdDSA)
     EdDSA,
+
+    // Now JWE algorithms; see https://www.rfc-editor.org/rfc/rfc7518.html#page-12
+    // see https://github.com/Keats/jsonwebtoken/issues/252
+    /// RSAES-PKCS1-v1_5
+    RSA1_5,
+
+    /// RSA-OAEP using default parameters
+    RSA_OAEP,
+
+    /// RSA-OAEP using SHA-256 and MGF1 with SHA-256
+    RSA_OAEP_256,
+
+    /// AES Key Wrap with default initial value using 128-bit key
+    A128KW,
+
+    /// AES Key Wrap with default initial value using 192-bit key
+    A192KW,
+
+    /// AES Key Wrap with default initial value using 256-bit key
+    A256KW,
+
+    /// Direct use of a shared symmetric key as the CEK
+    Dir,
+
+    /// Elliptic Curve Diffie-Hellman Ephemeral Static key agreement using Concat KDF
+    ECDH_ES,
+
+    /// ECDH-ES using Concat KDF and CEK wrapped with "A128KW"
+    ECDH_ES_A128KW,
+
+    /// ECDH-ES using Concat KDF and CEK wrapped with "A192KW"
+    ECDH_ES_A192KW,
+
+    /// ECDH-ES using Concat KDF and CEK wrapped with "A256KW"
+    ECDH_ES_A256KW,
+
+    /// Key wrapping with AES GCM using 128-bit key
+    A128GCMKW,
+
+    /// Key wrapping with AES GCM using 192-bit key
+    A192GCMKW,
+
+    /// Key wrapping with AES GCM using 256-bit key
+    A256GCMKW,
+
+    /// PBES2 with HMAC SHA-256 and "A128KW" wrapping
+    PBES2_HS256_A128KW,
+
+    /// PBES2 with HMAC SHA-384 and "A192KW" wrapping
+    PBES2_HS384_A192KW,
+
+    /// PBES2 with HMAC SHA-512 and "A256KW" wrapping
+    PBES2_HS512_A256KW,
 }
 
 impl Default for Algorithm {

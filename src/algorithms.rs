@@ -8,6 +8,7 @@ pub(crate) enum AlgorithmFamily {
     Rsa,
     Ec,
     Ed,
+    INVALID,
 }
 
 /// The algorithms supported for signing/verifying JWTs
@@ -136,6 +137,7 @@ impl Algorithm {
             | Algorithm::PS512 => AlgorithmFamily::Rsa,
             Algorithm::ES256 | Algorithm::ES384 => AlgorithmFamily::Ec,
             Algorithm::EdDSA => AlgorithmFamily::Ed,
+            _ => AlgorithmFamily::INVALID,
         }
     }
 }
